@@ -1,0 +1,19 @@
+# CODEOWNERS file
+# This file defines who has ownership and review responsibilities for different parts of the repository
+# Lines starting with a hash are comments and are ignored
+# Each line is a file pattern followed by one or more owners
+
+# Global rule - require review from repository administrators for all changes
+* @EfuaS
+
+# Critical configuration files require explicit approval
+.github/ @EfuaS
+.github/settings.yml @EfuaS
+.github/workflows/ @EfuaS
+CODEOWNERS @EfuaS
+README.md @EfuaS
+
+# Branch protection and security-related files
+.gitignore @EfuaS
+*.yml @EfuaS
+*.yaml @EfuaS

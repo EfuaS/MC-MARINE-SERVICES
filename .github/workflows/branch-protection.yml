@@ -1,0 +1,57 @@
+name: Branch Protection Enforcement
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  branch-protection-check:
+    runs-on: ubuntu-latest
+    name: Enforce Branch Protection Rules
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Check for direct pushes to main
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        echo "::warning::Direct pushes to main branch detected"
+        echo "This workflow serves as a reminder that the main branch should be protected."
+        echo "Please ensure branch protection rules are enabled in repository settings."
+        
+    - name: Validate branch protection configuration
+      run: |
+        echo "Checking for branch protection configuration files..."
+        if [ -f ".github/settings.yml" ]; then
+          echo "✓ Branch protection configuration found in .github/settings.yml"
+        else
+          echo "✗ No branch protection configuration found"
+        fi
+        
+        if [ -f "CODEOWNERS" ]; then
+          echo "✓ CODEOWNERS file found"
+        else
+          echo "✗ No CODEOWNERS file found"
+        fi
+        
+    - name: Display protection recommendations
+      run: |
+        echo "Branch Protection Recommendations:"
+        echo "=================================="
+        echo "1. Enable 'Restrict deletions' for the main branch"
+        echo "2. Require pull request reviews before merging"
+        echo "3. Require status checks to pass before merging"
+        echo "4. Restrict who can push to matching branches"
+        echo "5. Do not allow force pushes"
+        echo ""
+        echo "To enable these protections:"
+        echo "1. Go to repository Settings > Branches"
+        echo "2. Add a rule for 'main' branch"
+        echo "3. Configure the protection settings"
+        echo ""
+        echo "Alternatively, install a GitHub App like 'Probot: Settings'"
+        echo "which can automatically apply the settings from .github/settings.yml"

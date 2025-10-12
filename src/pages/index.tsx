@@ -1,10 +1,9 @@
-import { FileText } from "lucide-react";
-import Button from "./_components/Button";
+import Header from "./_components/Header";
 
 function App() {
   return (
     <>
-      <Button label="Get Quote" iconPosition="left" icon={FileText} />
+      <Header />
     </>
   );
 }

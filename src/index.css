@@ -1,1 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap");
 @import "tailwindcss";
+
+@theme {
+ /* Core Colors */
+    --color-background: #fafbfc; /* gray-50 */
+    --color-foreground: #1a202c; /* gray-900 */
+    --color-border: #e2e8f0; /* slate-200 */
+    --color-input: #ffffff; /* white */
+    --color-ring: #538136; /* green-700 */
+    
+    /* Card Colors */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1a202c; /* gray-900 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1a202c; /* gray-900 */
+    
+    /* Muted Colors */
+    --color-muted: #f1f5f9; /* slate-100 */
+    --color-muted-foreground: #4a5568; /* gray-600 */
+    
+    /* Primary Colors */
+    --color-primary: #1e3a5f; /* blue-900 */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #538136; /* green-700 */
+    --color-secondary-foreground: #ffffff; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #e53e3e; /* red-600 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #9AFF99; /* green-300 */
+    --color-accent-foreground: #1a202c; /* gray-900 */
+    
+    /* Success Colors */
+    --color-success: #38a169; /* green-600 */
+    --color-success-foreground: #ffffff; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #d69e2e; /* yellow-600 */
+    --color-warning-foreground: #1a202c; /* gray-900 */
+    
+    /* Error Colors */
+    --color-error: #e53e3e; /* red-600 */
+    --color-error-foreground: #ffffff; /* white */
+    
+    /* Maritime Brand Colors */
+    --color-maritime-authority: #1e3a5f; /* blue-900 */
+    --color-maritime-growth: #538136; /* green-700 */
+    --color-maritime-energy: #9AFF99; /* green-300 */
+    --color-maritime-emergency: #CC3333; /* red-700 */
+    --color-maritime-surface: #f1f5f9; /* slate-100 */
+    --color-text-secondary: #4a5568; /* gray-600 */
+
+    --font-mono: "JetBrains Mono", monospace;
+    --font-sans: "Inter", sans-serif;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}

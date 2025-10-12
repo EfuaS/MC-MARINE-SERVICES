@@ -1,12 +1,11 @@
-import Button from './_components/Button'
+import Button from "./_components/Button";
 
 function App() {
-
   return (
     <>
-    <Button label='Get Quote' />
+      <Button label="Get Quote" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

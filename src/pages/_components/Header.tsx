@@ -72,7 +72,7 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Nav items */}
+      {/*Desktop Nav items */}
       <nav className="hidden lg:flex items-center space-x-1">
         {navigationItems?.map(({ icon: Icon, name, path }) => (
           <Link

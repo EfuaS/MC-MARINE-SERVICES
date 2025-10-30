@@ -1,15 +1,9 @@
-import {
-  Anchor,
-  FileText,
-  Home,
-  Ship,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
+import { FileText, Home, type LucideIcon } from "lucide-react";
 import Button from "./Button";
 import { Link, type Path } from "../../router";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import logo from "../../assets/logo/logo.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,16 +29,16 @@ export default function Header() {
       path: "/",
       icon: Home,
     },
-    {
-      name: "Services",
-      path: "/",
-      icon: Ship,
-    },
-    {
-      name: "About",
-      path: "/",
-      icon: Users,
-    },
+    // {
+    //   name: "Services",
+    //   path: "/",
+    //   icon: Ship,
+    // },
+    // {
+    //   name: "About",
+    //   path: "/",
+    //   icon: Users,
+    // },
   ];
 
   return (
@@ -59,21 +53,26 @@ export default function Header() {
       <div className="flex items-center">
         <Link to="/" className="flex items-center space-x-3 group">
           <div className="size-10 bg-gradient-to-br from-maritime-authority to-maritime-growth rounded-lg flex items-center justify-center shadow-md group-hover:shadow-maritime-hover transition-all duration-300">
-            <Anchor size={24} color="white" strokeWidth={2.5} />
+            <img
+              src={logo}
+              alt="waves"
+              className="w-full h-full object-fill rounded-lg"
+              width={40}
+            />
           </div>
           <div className="hidden sm:block">
             <h1 className="text-xl font-bold text-maritime-authority group-hover:text-maritime-growth transition-colors duration-300">
               MC Marine Services
             </h1>
             <p className="text-xs text-text-secondary font-mono">
-              Ghana's Premier Marine Surveying Company
+              Ghana's Premium Marine Surveying Company
             </p>
           </div>
         </Link>
       </div>
 
       {/*Desktop Nav items */}
-      <nav className="hidden lg:flex items-center space-x-1">
+      <nav className="hidden lg:flex items-center -translate-x-24  space-x-1">
         {navigationItems?.map(({ icon: Icon, name, path }) => (
           <Link
             key={path}

@@ -63,17 +63,16 @@ export default function ContactSection() {
     {
       name: "Tema Port Office",
       address: "Tema Port, Tema, Ghana",
-      coordinates: "5.6698,-0.0166",
+      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.134145472372!2d0.0031649747455773647!3d5.626513494354539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078a238ec05e3%3A0xddd02c3f72c0b7ad!2sTema%20Harbour%20Port!5e1!3m2!1sen!2sgh!4v1761831566495!5m2!1sen!2sgh",
       hours: "24/7 Operations",
     },
     {
       name: "Takoradi Port Office",
       address: "Takoradi Port, Takoradi, Ghana",
-      coordinates: "4.8845,-1.7554",
+      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7557.261835614977!2d-1.7456484097344154!3d4.884835880363726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe770a8ab2c4bf9%3A0x794b8f65b8a452ef!2sTakoradi%20Harbour!5e1!3m2!1sen!2sgh!4v1761831690843!5m2!1sen!2sgh",
       hours: "24/7 Operations",
     },
   ];
-
   return (
     <section id="contact-section" className="py-20 bg-maritime-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,7 +235,8 @@ export default function ContactSection() {
                   info@mcmarinepro.com
                 </a>
                 <a
-                  href="https://wa.me/233241234567"
+                  href="https://wa.me/+233242829813"
+                  target="_blank"
                   className="flex items-center hover:text-maritime-energy transition-colors duration-300"
                 >
                   <MessageCircle
@@ -314,7 +314,7 @@ export default function ContactSection() {
                         loading="lazy"
                         title={office.name}
                         referrerPolicy="no-referrer-when-downgrade"
-                        src={`https://www.google.com/maps?q=${office.coordinates}&z=14&output=embed`}
+                        src={office.src}
                         className="border-0"
                       />
                     </div>

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import Button from "../Button";
 import { FileText, Phone, Shield } from "lucide-react";
+import loadingContainer from "../../../assets/images/hero-carousel/loading-container.jpeg";
+import loadingContainer1 from "../../../assets/images/hero-carousel/loading-1.jpeg";
+import loadingContainer2 from "../../../assets/images/hero-carousel/loading-2.jpeg";
+
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -11,11 +15,15 @@ export default function HeroSection() {
       alt: "Tema Port cargo operations with containers and cranes",
     },
     {
-      src: "https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+      src: loadingContainer,
       alt: "Takoradi Port vessel inspection activities",
     },
     {
-      src: "https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+      src: loadingContainer1,
+      alt: "Ghana port surveying operations with maritime professionals",
+    },
+    {
+      src: loadingContainer2,
       alt: "Ghana port surveying operations with maritime professionals",
     },
   ];

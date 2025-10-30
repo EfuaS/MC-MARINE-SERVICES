@@ -1,53 +1,29 @@
 import { useEffect, useState, useMemo } from "react";
+import dzata from "../../../assets/images/dzata-cement.png";
+import msc from "../../../assets/images/msc.png";
+import wilmar from "../../../assets/images/wilmar.jpg";
+import cosco from "../../../assets/images/cosco.png";
 
 const majorClients = [
   {
-    id: 1,
-    name: "Maersk Line",
-    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=200&h=100",
-    description: "Global shipping leader",
+    name: "Wilmar International",
+    logo: wilmar,
+    description: "Asia's leading agribusiness group",
   },
   {
-    id: 2,
-    name: "MSC Mediterranean",
-    logo: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=200&h=100",
-    description: "Container shipping excellence",
+    name: "Dzata Cement Ltd",
+    logo: dzata,
+    description: "Leading cement manufacturer in Ghana",
   },
   {
-    id: 3,
-    name: "CMA CGM Group",
-    logo: "https://images.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg?auto=format&fit=crop&w=200&h=100",
-    description: "French shipping giant",
+    name: "Mediterranean Shipping Company",
+    logo: msc,
+    description: "Global container shipping giant",
   },
   {
-    id: 4,
-    name: "Hapag-Lloyd",
-    logo: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=200&h=100",
-    description: "German maritime expertise",
-  },
-  {
-    id: 5,
-    name: "COSCO Shipping",
-    logo: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100",
+    name: "Cosco Shipping",
+    logo: cosco,
     description: "Chinese shipping powerhouse",
-  },
-  {
-    id: 6,
-    name: "Evergreen Marine",
-    logo: "https://images.pixabay.com/photo/2016/11/29/05/45/container-1867340_1920.jpg?auto=format&fit=crop&w=200&h=100",
-    description: "Taiwanese container line",
-  },
-  {
-    id: 7,
-    name: "ONE Ocean Network",
-    logo: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=200&h=100",
-    description: "Japanese alliance",
-  },
-  {
-    id: 8,
-    name: "Yang Ming Marine",
-    logo: "https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg?auto=compress&cs=tinysrgb&w=200&h=100",
-    description: "Taiwan-based carrier",
   },
 ];
 
@@ -124,7 +100,7 @@ export default function TrustedByLeaders() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {slideClients.map((client) => (
                     <div
-                      key={client.id}
+                      key={client.name}
                       className="group flex flex-col items-center p-6 bg-maritime-surface rounded-lg maritime-hover-lift cursor-pointer"
                     >
                       <div className="w-24 h-16 mb-4 overflow-hidden rounded-lg bg-white shadow-md">

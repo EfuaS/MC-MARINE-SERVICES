@@ -1,4 +1,5 @@
 import { Link } from "../../router";
+import logo from "../../assets/logo/logo.png";
 
 export default function Footer() {
   return (
@@ -7,25 +8,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">MC Marine Pro</h3>
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="size-10 bg-gradient-to-br from-maritime-authority to-maritime-growth rounded-lg flex items-center justify-center shadow-md group-hover:shadow-maritime-hover transition-all duration-300">
+                <img
+                  src={logo}
+                  alt="waves"
+                  className="w-full h-full object-fill rounded-lg"
+                  width={40}
+                />
+              </div>
+
+              <h3 className="text-2xl font-bold">MC Marine Services</h3>
+            </div>
             <p className="text-white/80 mb-4 leading-relaxed">
               Ghana's premier marine surveying authority, providing certified
               excellence in maritime compliance and vessel inspections across
-              Tema and Takoradi ports since 2010.
+              Tema and Takoradi ports since 2008.
             </p>
-            <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-maritime-growth rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">MC</span>
-              </div>
-              <div>
-                <div className="text-sm font-semibold">
-                  Ghana Maritime Authority Certified
-                </div>
-                <div className="text-xs text-white/60">
-                  License #GMA-MS-2010-001
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -63,8 +62,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-white/80 text-sm">
-              <li>Tema: +233-30-234-5678</li>
-              <li>Takoradi: +233-31-345-6789</li>
+              <li>+233-24-282-9813</li>
+              <li>+233-26-282-9813</li>
               <li>info@mcmarinepro.com</li>
             </ul>
           </div>
@@ -72,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
           <p>
-            &copy; {new Date().getFullYear()} MC Marine Pro. All rights
+            &copy; {new Date().getFullYear()} MC Marine Services. All rights
             reserved. | Ghana Maritime Authority Licensed
           </p>
         </div>

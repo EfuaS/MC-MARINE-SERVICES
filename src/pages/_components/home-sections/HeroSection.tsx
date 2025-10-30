@@ -62,7 +62,7 @@ export default function HeroSection() {
 
         {/* Subheadline */}
         <p className="text-xl sm:text-2xl text-white/90 mb-8 font-medium">
-          Certified Excellence in Maritime Compliance Since 2010
+          Certified Excellence in Maritime Compliance Since 2008
         </p>
 
         {/* Description */}

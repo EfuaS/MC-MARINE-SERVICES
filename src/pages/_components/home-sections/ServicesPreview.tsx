@@ -1,7 +1,7 @@
 import { ArrowRight, Check, Package, Shield, Ship } from "lucide-react";
 import { useState } from "react";
 import Button from "../Button";
-import { Link } from "../../../router";
+import { Link, useNavigate } from "../../../router";
 import { cn } from "@sglara/cn";
 
 const services = [
@@ -72,6 +72,7 @@ const services = [
 
 export default function ServicesPreview() {
   const [hoveredService, setHoveredService] = useState("");
+  const navigate = useNavigate();
 
   return (
     <section className="py-20 bg-maritime-surface">
@@ -163,6 +164,7 @@ export default function ServicesPreview() {
                     iconPosition="right"
                     iconSize={16}
                     className={service.buttonStyle}
+                    onClick={()=> navigate('/services')}
                   >
                     Learn More
                   </Button>
@@ -183,9 +185,8 @@ export default function ServicesPreview() {
         </div>
 
         {/* CTA Section */}
-        {/* TODO: Link to services page */}
         <div className="text-center">
-          <Link to="/">
+          <Link to="/services">
             <Button
               size="lg"
               iconPosition="right"

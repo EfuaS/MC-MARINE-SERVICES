@@ -3,6 +3,10 @@ import dzata from "../../../assets/images/dzata-cement.png";
 import msc from "../../../assets/images/msc.png";
 import wilmar from "../../../assets/images/wilmar.jpg";
 import cosco from "../../../assets/images/cosco.png";
+import aalmar from "../../../assets/images/aalmar.png";
+import africaCement from "../../../assets/images/africa_cement_factory_logo.jpg";
+import olam from "../../../assets/images/olam.png";
+import pzcussons from "../../../assets/images/pz-cussons-logo.png";
 
 const majorClients = [
   {
@@ -24,6 +28,27 @@ const majorClients = [
     name: "Cosco Shipping",
     logo: cosco,
     description: "Chinese shipping powerhouse",
+  },
+  {
+    name: "Olam Grains",
+    logo: olam,
+    description:
+      "Leader in food, feed and fibre in high-growth emerging markets",
+  },
+  {
+    name: "Africa Cement Factory",
+    logo: africaCement,
+    description: "Cement manufacturing leader in Africa",
+  },
+  {
+    name: "PZ Cussons",
+    logo: pzcussons,
+    description: "British manufacturer of personal healthcare products",
+  },
+  {
+    name: "Aalmar Surveys",
+    logo: aalmar,
+    description: "Specialized marine surveying services",
   },
 ];
 

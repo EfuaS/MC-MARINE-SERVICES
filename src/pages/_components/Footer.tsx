@@ -33,7 +33,7 @@ export default function Footer() {
             <ul className="space-y-2 text-white/80">
               <li>
                 <Link
-                  to="/"
+                  to="/services"
                   className="hover:text-maritime-energy transition-colors"
                 >
                   Services

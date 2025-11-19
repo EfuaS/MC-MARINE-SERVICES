@@ -13,11 +13,11 @@ export default function AboutUs() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-maritime-authority via-maritime-authority to-maritime-growth">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-maritime-authority via-blue-900 to-maritime-growth">
           {/* Animated Background Pattern */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/163726/belgium-antwerp-shipping-container-163726.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-5"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-maritime-authority/90 via-maritime-authority/50 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-maritime-authority/10 via-maritime-authority/20 to-transparent"></div>
             {/* Decorative geometric shapes */}
             <div className="absolute top-20 right-20 w-64 h-64 bg-maritime-energy/10 rounded-full blur-3xl animate-pulse"></div>
             <div

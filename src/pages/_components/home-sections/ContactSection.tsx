@@ -58,7 +58,6 @@ export default function ContactSection() {
     }, 2000);
   };
 
-  //   TODO: Replace with real data
   const officeLocations = [
     {
       name: "Tema Port Office",

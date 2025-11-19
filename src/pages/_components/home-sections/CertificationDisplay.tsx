@@ -38,7 +38,7 @@ export default function CertificationDisplay() {
           {certifications.map((cert) => (
             <div
               key={cert.name}
-              className="bg-maritime-surface rounded-xl w-[450px] p-6 maritime-card-shadow maritime-hover-lift group cursor-pointer"
+              className="bg-maritime-surface rounded-xl w-full md:w-[450px] p-6 maritime-card-shadow maritime-hover-lift group cursor-pointer"
             >
               {/* Certification Logo */}
               <div className="flex items-center mb-4">

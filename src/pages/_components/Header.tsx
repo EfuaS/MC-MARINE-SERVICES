@@ -1,4 +1,4 @@
-import { FileText, Home, Ship, type LucideIcon } from "lucide-react";
+import { FileText, Home, Ship, Users, type LucideIcon } from "lucide-react";
 import Button from "./Button";
 import { Link, type Path } from "../../router";
 import { useEffect, useState } from "react";
@@ -34,11 +34,11 @@ export default function Header() {
       path: "/services",
       icon: Ship,
     },
-    // {
-    //   name: "About",
-    //   path: "/",
-    //   icon: Users,
-    // },
+    {
+      name: "About",
+      path: "/about-us",
+      icon: Users,
+    },
   ];
 
   return (

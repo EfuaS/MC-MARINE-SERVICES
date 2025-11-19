@@ -1,6 +1,6 @@
 import Footer from "../_components/Footer";
 import Header from "../_components/Header";
-import HeroSection from "./_components/HeroSection";
+import ModernHeroSection from "./_components/ModernHeroSection";
 import PortOperationsBanner from "./_components/PortOperationsBanner";
 import ServiceSelector from "./_components/ServiceSelector";
 
@@ -9,8 +9,7 @@ export default function Services() {
     <>
       <Header />
       <main>
-        <HeroSection />
-
+        <ModernHeroSection />
         {/* Interactive Service Selector */}
         <ServiceSelector />
 

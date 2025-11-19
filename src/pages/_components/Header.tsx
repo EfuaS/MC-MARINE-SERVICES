@@ -1,27 +1,20 @@
 import { FileText, Home, Ship, Users, type LucideIcon } from "lucide-react";
-import Button from "./Button";
 import { Link, type Path } from "../../router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const {pathname} = useLocation();
 
   // Function to check if current path matches the navigation item
   const isActivePath = (path: Path): boolean => {
-    return location.pathname === path;
+    return pathname === path;
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+ useEffect(() => {
+   window.scrollTo(0, 0);
+ }, [pathname]);
 
   const navigationItems: { name: string; path: Path; icon: LucideIcon }[] = [
     {
@@ -43,11 +36,8 @@ export default function Header() {
 
   return (
     <header
-      className={`flex justify-between items-center fixed p-2 top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-maritime border-b border-slate-200"
-          : "bg-white/90 backdrop-blur-sm"
-      }`}
+      className={`flex justify-between items-center fixed p-2 top-0 left-0 right-0 z-50 transition-all duration-300  bg-white/95 backdrop-blur-md shadow-maritime border-b border-slate-200
+      `}
     >
       {/* logo section */}
       <div className="flex items-center">
@@ -90,12 +80,13 @@ export default function Header() {
       </nav>
 
       {/* Call to Action Button */}
-      <Button
-        label="Get Quote"
-        iconPosition="right"
-        icon={FileText}
-        className="bg-maritime-growth hover:bg-maritime-authority maritime-emergency-glow"
-      />
+      <a
+        href="/"
+        className="flex items-center gap-2 px-6 py-2.5 bg-maritime-growth hover:bg-maritime-authority text-white font-semibold rounded-lg transition-all duration-300 maritime-emergency-glow"
+      >
+        <span>Get Quote</span>
+        <FileText size={18} />
+      </a>
     </header>
   );
 }

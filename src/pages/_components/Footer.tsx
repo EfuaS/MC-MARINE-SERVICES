@@ -41,20 +41,20 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/about-us"
                   className="hover:text-maritime-energy transition-colors"
                 >
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/"
                   className="hover:text-maritime-energy transition-colors"
-                >
-                  Contact
+                >Portfolio 
                 </Link>
-              </li>
+              </li> */}
+              
             </ul>
           </div>
 

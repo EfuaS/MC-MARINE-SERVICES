@@ -1,24 +1,33 @@
 import { Users } from "lucide-react";
+import Mark from "../../../assets/images/the-team/mark-cobbinah.png";
+import Richard from "../../../assets/images/the-team/richard-nortey.png";
+
+const teamMembers = [
+  {
+    name: "Patrick Appiah-Opong",
+    role: "Marine Chief Engineer",
+    image:
+      "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400",
+    description:
+      "Patrick is a class one marine chief engineer with extensive experience in marine engine systems, ship surveys, and port state control inspections. He specializes in international ship management systems (ISM) and has successfully transitioned from hands-on engineering roles to leadership positions, bringing a wealth of technical and managerial expertise to our team.",
+  },
+  {
+    name: "Mark Kwame Cobbinah",
+    role: "Senior inspector",
+    image: Mark,
+    description:
+      "Mark is a seasoned professional with over 15 years of experience in marine surveys, engineering, cargo inspection, and port operations. His deep knowledge of the maritime industry and commitment to excellence help drive our mission to deliver outstanding service in a dynamic and progressive environment.",
+  },
+  {
+    name: "Richard Nortey",
+    role: "Marine Engineer",
+    image: Richard,
+    description:
+      "Richard is a Class 1 Marine Engineer with expertise in hull and machinery surveys, draft surveys, and marine engineering. He holds advanced certifications and is a member of leading maritime organizations, demonstrating strong technical proficiency in ship operations, project management, and marine safety standards.",
+  },
+];
 
 export default function TeamSection() {
-const teamMembers = [
-    {
-        name: "Patrick Appiah-Opong",
-        role: "Marine surveyor",
-        image:
-            "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400",
-        description:
-            "Patrick is a class one marine chief engineer with extensive experience in marine engine systems, ship surveys, and port state control inspections. He specializes in international ship management systems (ISM) and has successfully transitioned from hands-on engineering roles to leadership positions, bringing a wealth of technical and managerial expertise to our team.",
-    },
-    {
-        name: "Mark Kwame Cobbinah",
-        role: "Senior inspector",
-        image:
-            "https://images.pexels.com/photos/3760514/pexels-photo-3760514.jpeg?auto=compress&cs=tinysrgb&w=400&h=400",
-        description:
-            "Mark is a seasoned professional with over 15 years of experience in marine surveys, engineering, cargo inspection, and port operations. His deep knowledge of the maritime industry and commitment to excellence help drive our mission to deliver outstanding service in a dynamic and progressive environment.",
-    },
-];
 
   return (
     <section className="py-20 bg-white">
@@ -50,15 +59,14 @@ const teamMembers = [
             >
               {/* Image */}
               <div
-                className={` overflow-hidden ${
+                className={` overflow-hidden my-auto size-80 ${
                   index % 2 === 1 ? "lg:col-start-2 place-self-end" : ""
                 }`}
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  width={400}
-                  height={400}
+                  width={320}
                   className="rounded-xl group-hover:scale-105 transition-transform duration-300"
                 />
               </div>

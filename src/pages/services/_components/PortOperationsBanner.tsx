@@ -1,4 +1,5 @@
 import Button from "../../_components/Button";
+import Tooltip from "../../_components/Tooltip";
 import { Phone } from "lucide-react";
 
 export default function PortOperationsBanner() {
@@ -31,16 +32,21 @@ export default function PortOperationsBanner() {
             </div>
           </div>
           <div className="text-center lg:text-right">
-            {/* TODO: Add action */}
-            <Button
-              variant="primary"
-              size="lg"
-              icon={Phone}
-              iconPosition="left"
-              className="bg-white text-maritime-authority hover:bg-maritime-energy hover:text-maritime-authority mb-3"
-            >
-              Port Operations Hotline
-            </Button>
+            <Tooltip text="Copy contact to clipboard" position="top">
+              <Button
+                variant="primary"
+                size="lg"
+                icon={Phone}
+                iconPosition="left"
+                className="bg-white text-maritime-authority hover:bg-maritime-energy hover:text-maritime-authority mb-3"
+                onClick={() => {
+                  // copy phone number to clipboard
+                  navigator.clipboard.writeText("+233 30 276 3456");
+                }}
+              >
+                Port Operations Hotline
+              </Button>
+            </Tooltip>
             <div className="text-sm opacity-80">
               Direct line to our port-based surveyors
             </div>

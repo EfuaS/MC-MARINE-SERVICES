@@ -41,7 +41,7 @@ export default function MissionSection() {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-maritime-growth text-white p-6 rounded-xl maritime-card-shadow">
-              <div className="text-4xl font-bold mb-1">17+</div>
+              <div className="text-4xl font-bold mb-1">20+</div>
               <div className="text-sm">Years of Excellence</div>
             </div>
           </div>

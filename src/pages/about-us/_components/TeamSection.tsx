@@ -1,26 +1,26 @@
 import { Users } from "lucide-react";
 import Mark from "../../../assets/images/the-team/mark-cobbinah.png";
 import Richard from "../../../assets/images/the-team/richard-nortey.png";
+import Oppong from "../../../assets/images/the-team/appiah-oppong.png";
 
 const teamMembers = [
   {
     name: "Patrick Appiah-Opong",
-    role: "Marine Chief Engineer",
-    image:
-      "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400",
+    role: "Class 1 Marine Engineer",
+    image: Oppong,
     description:
       "Patrick is a class one marine chief engineer with extensive experience in marine engine systems, ship surveys, and port state control inspections. He specializes in international ship management systems (ISM) and has successfully transitioned from hands-on engineering roles to leadership positions, bringing a wealth of technical and managerial expertise to our team.",
   },
   {
     name: "Mark Kwame Cobbinah",
-    role: "Senior inspector",
+    role: "Hull & Machinery / Cargo Surveyor",
     image: Mark,
     description:
       "Mark is a seasoned professional with over 15 years of experience in marine surveys, engineering, cargo inspection, and port operations. His deep knowledge of the maritime industry and commitment to excellence help drive our mission to deliver outstanding service in a dynamic and progressive environment.",
   },
   {
     name: "Richard Nortey",
-    role: "Marine Engineer",
+    role: "Class 1 Marine Engineer",
     image: Richard,
     description:
       "Richard is a Class 1 Marine Engineer with expertise in hull and machinery surveys, draft surveys, and marine engineering. He holds advanced certifications and is a member of leading maritime organizations, demonstrating strong technical proficiency in ship operations, project management, and marine safety standards.",

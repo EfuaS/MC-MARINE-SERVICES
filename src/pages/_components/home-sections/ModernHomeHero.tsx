@@ -122,7 +122,7 @@ export default function ModernHomeHero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
               <div className="text-3xl font-bold text-maritime-energy mb-1">
-                17+
+                20+
               </div>
               <div className="text-white/90 text-sm font-medium">
                 Years Experience

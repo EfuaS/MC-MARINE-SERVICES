@@ -64,7 +64,7 @@ const trustFigures = [
     subTitle: "Round-the-clock availability",
   },
   {
-    figure: "17",
+    figure: "20+",
     title: "Years Experience",
     subTitle: "Ghana Institute of Marine Surveyors certified",
   },

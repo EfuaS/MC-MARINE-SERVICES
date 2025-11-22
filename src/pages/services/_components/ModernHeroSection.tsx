@@ -64,7 +64,7 @@ export default function ModernHeroSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 maritime-hover-lift">
             <div className="text-4xl font-bold text-maritime-energy mb-2">
-              17+
+              20+
             </div>
             <div className="text-white/80 text-sm uppercase tracking-wider">
               Years of Service

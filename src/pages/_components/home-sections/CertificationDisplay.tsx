@@ -78,7 +78,7 @@ export default function CertificationDisplay() {
                 <Users size={32} color="white" />
               </div>
               <h4 className="text-xl font-bold text-maritime-authority mb-2">
-                17+ Years
+                20+ Years
               </h4>
               <p className="text-text-secondary">
                 Professional maritime surveying experience

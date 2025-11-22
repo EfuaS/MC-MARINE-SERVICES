@@ -45,7 +45,7 @@ export default function AboutUs() {
             <div className="flex flex-wrap justify-center gap-8 mb-12">
               <div className="text-center">
                 <div className="text-4xl font-bold text-maritime-energy mb-2">
-                  17+
+                  20+
                 </div>
                 <div className="text-white/80 text-sm uppercase tracking-wider">
                   Years Experience

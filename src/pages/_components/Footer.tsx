@@ -47,16 +47,6 @@ export default function Footer() {
                   About Us
                 </Link>
               </li>
-              <li>
-                <span className="inline-flex items-center gap-2">
-                  <span className="text-white/60 cursor-not-allowed">
-                    Portfolio
-                  </span>
-                  <span className="text-xs bg-maritime-energy text-maritime-authority font-semibold px-2 py-0.5 rounded-full">
-                    Coming Soon
-                  </span>
-                </span>
-              </li>
             </ul>
           </div>
 

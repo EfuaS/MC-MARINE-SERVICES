@@ -23,6 +23,58 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | null>(null);
+  const [formErrors, setFormErrors] = useState<{
+    [key: string]: string;
+  } | null>(null);
+
+  function validateForm(values) {
+    // reset form errors
+    setFormErrors(null);
+
+    // validate email is valid
+    // More robust email regex (RFC 5322 Official Standard)
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormErrors((prev) => ({
+        ...prev,
+        email: "Please enter a valid email address.",
+      }));
+    }
+
+    // validate phone number with country code
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setFormErrors((prev) => ({
+        ...prev,
+        phone: "Please enter a valid phone number with country code.",
+      }));
+    }
+
+    // validate message, company, name, serviceType are not empty
+    if (!formData.message.trim()) {
+      setFormErrors((prev) => ({
+        ...prev,
+        message: "Please enter a message.",
+      }));
+    }
+    if (!formData.company.trim()) {
+      setFormErrors((prev) => ({
+        ...prev,
+        company: "Please enter your company name.",
+      }));
+    }
+    if (!formData.name.trim()) {
+      setFormErrors((prev) => ({ ...prev, name: "Please enter your name." }));
+    }
+    if (!formData.serviceType.trim()) {
+      setFormErrors((prev) => ({
+        ...prev,
+        serviceType: "Please select a service type.",
+      }));
+    }
+    return formErrors;
+  }
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -38,6 +90,9 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
+
+    // run form validation
+
     setIsSubmitting(true);
 
     // Simulate form submission

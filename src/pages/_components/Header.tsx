@@ -81,7 +81,7 @@ export default function Header() {
 
       {/* Call to Action Button */}
       <a
-        href="/"
+        href="/#contact-section"
         className="flex items-center gap-2 px-6 py-2.5 bg-maritime-growth hover:bg-maritime-authority text-white font-semibold rounded-lg transition-all duration-300 maritime-emergency-glow"
       >
         <span>Get Quote</span>

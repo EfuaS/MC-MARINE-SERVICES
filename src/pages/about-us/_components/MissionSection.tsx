@@ -1,5 +1,4 @@
 import { Ship } from "lucide-react";
-import containers from "../../../assets/images/containers.jpg";
 
 export default function MissionSection() {
   return (
@@ -35,7 +34,7 @@ export default function MissionSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden maritime-card-shadow">
               <img
-                src={containers}
+                src="https://mcmarineservices.com/images/containers.webp"
                 alt="Port operations and vessel inspection"
                 className="w-full h-full object-cover"
               />

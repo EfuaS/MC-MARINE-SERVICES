@@ -1,18 +1,15 @@
 import { CheckCircle, Globe, Shield, Users } from "lucide-react";
-import GIMS from "../../../assets/images/GIMS.jpg";
-import GMA from "../../../assets/images/GMA.jpg";
 
-// TODO: Replace with actual company certifications
 const certifications = [
   {
     name: "Ghana Maritime Authority",
     type: "Primary Certification",
-    logo: GMA,
+    logo: "https://mcmarineservices.com/images/GMA.webp",
   },
   {
     name: "Ghana Institute of Marine Surveyors",
     type: "Local Membership",
-    logo: GIMS,
+    logo: "https://mcmarineservices.com/images/GIMS.webp",
   },
 ];
 
@@ -54,10 +51,10 @@ export default function CertificationDisplay() {
                     <span className="text-xs font-semibold text-maritime-growth bg-maritime-energy px-2 py-1 rounded-full">
                       {cert.type}
                     </span>
-                      <CheckCircle
-                        size={16}
-                        color="var(--color-maritime-growth)"
-                      />
+                    <CheckCircle
+                      size={16}
+                      color="var(--color-maritime-growth)"
+                    />
                   </div>
                 </div>
               </div>

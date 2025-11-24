@@ -2,7 +2,6 @@ import { FileText, Home, Ship, Users, type LucideIcon } from "lucide-react";
 import { Link, type Path } from "../../router";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import logo from "../../assets/logo/logo.png";
 
 export default function Header() {
   const {pathname} = useLocation();
@@ -44,7 +43,7 @@ export default function Header() {
         <Link to="/" className="flex items-center space-x-3 group">
           <div className="size-10 bg-gradient-to-br from-maritime-authority to-maritime-growth rounded-lg flex items-center justify-center shadow-md group-hover:shadow-maritime-hover transition-all duration-300">
             <img
-              src={logo}
+              src="https://mcmarineservices.com/logo.png"
               alt="waves"
               className="w-full h-full object-fill rounded-lg"
               width={40}

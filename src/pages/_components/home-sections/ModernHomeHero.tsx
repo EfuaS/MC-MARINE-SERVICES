@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import { Award, ArrowRight } from "lucide-react";
-import loadingContainer from "../../../assets/images/hero-carousel/loading-container.jpeg";
-import loadingContainer1 from "../../../assets/images/hero-carousel/loading-1.jpeg";
-import loadingContainer2 from "../../../assets/images/hero-carousel/loading-2.jpeg";
 import { Link } from "../../../router";
 
 export default function ModernHomeHero() {
@@ -14,15 +11,15 @@ export default function ModernHomeHero() {
       alt: "Tema Port cargo operations with containers and cranes",
     },
     {
-      src: loadingContainer,
+      src: "https://mcmarineservices.com/images/hero-carousel/loading-container.webp",
       alt: "Takoradi Port vessel inspection activities",
     },
     {
-      src: loadingContainer1,
+      src: "https://mcmarineservices.com/images/hero-carousel/loading-1.webp",
       alt: "Ghana port surveying operations with maritime professionals",
     },
     {
-      src: loadingContainer2,
+      src: "https://mcmarineservices.com/images/hero-carousel/loading-2.webp",
       alt: "Ghana port surveying operations with maritime professionals",
     },
   ];

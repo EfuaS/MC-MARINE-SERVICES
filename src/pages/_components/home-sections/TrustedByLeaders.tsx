@@ -1,53 +1,45 @@
 import { useEffect, useState, useMemo } from "react";
-import dzata from "../../../assets/images/dzata-cement.png";
-import msc from "../../../assets/images/msc.png";
-import wilmar from "../../../assets/images/wilmar.jpg";
-import cosco from "../../../assets/images/cosco.png";
-import aalmar from "../../../assets/images/aalmar.png";
-import africaCement from "../../../assets/images/africa_cement_factory_logo.jpg";
-import olam from "../../../assets/images/olam.png";
-import pzcussons from "../../../assets/images/pz-cussons-logo.png";
 
 const majorClients = [
   {
     name: "Wilmar International",
-    logo: wilmar,
+    logo: "https://mcmarineservices.com/images/wilmar.webp",
     description: "Asia's leading agribusiness group",
   },
   {
     name: "Dzata Cement Ltd",
-    logo: dzata,
+    logo: "https://mcmarineservices.com/images/dzata-cement.webp",
     description: "Leading cement manufacturer in Ghana",
   },
   {
     name: "Mediterranean Shipping Company",
-    logo: msc,
+    logo: "https://mcmarineservices.com/images/msc.webp",
     description: "Global container shipping giant",
   },
   {
     name: "Cosco Shipping",
-    logo: cosco,
+    logo: "https://mcmarineservices.com/images/cosco.webp",
     description: "Chinese shipping powerhouse",
   },
   {
     name: "Olam Grains",
-    logo: olam,
+    logo: "https://mcmarineservices.com/images/olam.webp",
     description:
       "Leader in food, feed and fibre in high-growth emerging markets",
   },
   {
     name: "Africa Cement Factory",
-    logo: africaCement,
+    logo: "https://mcmarineservices.com/images/africa_cement_factory_logo.webp",
     description: "Cement manufacturing leader in Africa",
   },
   {
     name: "PZ Cussons",
-    logo: pzcussons,
+    logo: "https://mcmarineservices.com/images/pz-cussons-logo.webp",
     description: "British manufacturer of personal healthcare products",
   },
   {
     name: "Aalmar Surveys",
-    logo: aalmar,
+    logo: "https://mcmarineservices.com/images/aalmar.webp",
     description: "Specialized marine surveying services",
   },
 ];

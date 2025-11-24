@@ -1,33 +1,29 @@
 import { Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import teamwork from "../../../assets/images/teamwork.png";
-import inspection1 from "../../../assets/images/inspection2.png";
-import inspection3 from "../../../assets/images/inspection3.png";
-import inspection4 from "../../../assets/images/inspection4.png";
-import inspection5 from "../../../assets/images/inspection5.png";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 export default function CommitmentSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
     {
-      src: teamwork,
+      src: "https://mcmarineservices.com/images/teamwork.webp",
       alt: "Team collaboration and commitment",
     },
     {
-      src: inspection1,
+      src: "https://mcmarineservices.com/images/inspection2.webp",
       alt: "Marine surveyor conducting inspection",
     },
     {
-      src: inspection3,
+      src: "https://mcmarineservices.com/images/inspection3.webp",
       alt: "Port operations and vessel inspection",
     },
     {
-      src: inspection4,
+      src: "https://mcmarineservices.com/images/inspection4.webp",
       alt: "Cargo operations at port",
     },
     {
-      src: inspection5,
+      src: "https://mcmarineservices.com/images/inspection5.webp",
       alt: "Caterpillars at port",
     },
   ];
@@ -65,10 +61,12 @@ export default function CommitmentSection() {
                     index === currentImageIndex ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <img
+                  <OptimizedImage
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover"
+                    priority={index === 0} // Only first image loads immediately
+                    className="w-full h-full"
+                    objectFit="cover"
                   />
                 </div>
               ))}

@@ -1,53 +1,46 @@
 import { useEffect, useState, useMemo } from "react";
-import dzata from "../../../assets/images/dzata-cement.png";
-import msc from "../../../assets/images/msc.png";
-import wilmar from "../../../assets/images/wilmar.jpg";
-import cosco from "../../../assets/images/cosco.png";
-import aalmar from "../../../assets/images/aalmar.png";
-import africaCement from "../../../assets/images/africa_cement_factory_logo.jpg";
-import olam from "../../../assets/images/olam.png";
-import pzcussons from "../../../assets/images/pz-cussons-logo.png";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 const majorClients = [
   {
     name: "Wilmar International",
-    logo: wilmar,
+    logo: "https://mcmarineservices.com/images/wilmar.webp",
     description: "Asia's leading agribusiness group",
   },
   {
     name: "Dzata Cement Ltd",
-    logo: dzata,
+    logo: "https://mcmarineservices.com/images/dzata-cement.webp",
     description: "Leading cement manufacturer in Ghana",
   },
   {
     name: "Mediterranean Shipping Company",
-    logo: msc,
+    logo: "https://mcmarineservices.com/images/msc.webp",
     description: "Global container shipping giant",
   },
   {
     name: "Cosco Shipping",
-    logo: cosco,
+    logo: "https://mcmarineservices.com/images/cosco.webp",
     description: "Chinese shipping powerhouse",
   },
   {
     name: "Olam Grains",
-    logo: olam,
+    logo: "https://mcmarineservices.com/images/olam.webp",
     description:
       "Leader in food, feed and fibre in high-growth emerging markets",
   },
   {
     name: "Africa Cement Factory",
-    logo: africaCement,
+    logo: "https://mcmarineservices.com/images/africa_cement_factory_logo.webp",
     description: "Cement manufacturing leader in Africa",
   },
   {
     name: "PZ Cussons",
-    logo: pzcussons,
+    logo: "https://mcmarineservices.com/images/pz-cussons-logo.webp",
     description: "British manufacturer of personal healthcare products",
   },
   {
     name: "Aalmar Surveys",
-    logo: aalmar,
+    logo: "https://mcmarineservices.com/images/aalmar.webp",
     description: "Specialized marine surveying services",
   },
 ];
@@ -129,10 +122,13 @@ export default function TrustedByLeaders() {
                       className="group flex flex-col items-center p-6 bg-maritime-surface rounded-lg maritime-hover-lift cursor-pointer"
                     >
                       <div className="w-24 h-16 mb-4 overflow-hidden rounded-lg bg-white shadow-md">
-                        <img
+                        <OptimizedImage
                           src={client.logo}
                           alt={`${client.name} logo`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          width={96}
+                          height={64}
+                          className="w-full h-full rounded-lg"
+                          objectFit="cover"
                         />
                       </div>
                       <h3 className="text-sm font-semibold text-maritime-authority text-center mb-1">

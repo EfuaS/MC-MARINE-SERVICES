@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Award, ArrowRight } from "lucide-react";
-import loadingContainer from "../../../assets/images/hero-carousel/loading-container.jpeg";
-import loadingContainer1 from "../../../assets/images/hero-carousel/loading-1.jpeg";
-import loadingContainer2 from "../../../assets/images/hero-carousel/loading-2.jpeg";
 import { Link } from "../../../router";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 export default function ModernHomeHero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -14,15 +12,15 @@ export default function ModernHomeHero() {
       alt: "Tema Port cargo operations with containers and cranes",
     },
     {
-      src: loadingContainer,
+      src: "https://mcmarineservices.com/images/hero-carousel/loading-container.webp",
       alt: "Takoradi Port vessel inspection activities",
     },
     {
-      src: loadingContainer1,
+      src: "https://mcmarineservices.com/images/hero-carousel/loading-1.webp",
       alt: "Ghana port surveying operations with maritime professionals",
     },
     {
-      src: loadingContainer2,
+      src: "https://mcmarineservices.com/images/hero-carousel/loading-2.webp",
       alt: "Ghana port surveying operations with maritime professionals",
     },
   ];
@@ -49,13 +47,15 @@ export default function ModernHomeHero() {
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
+            <OptimizedImage
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              priority={index === 0}
+              className="w-full h-full"
+              objectFit="cover"
             />
             {/* Modern gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-maritime-authority/95 via-maritime-authority/85 to-maritime-growth/80"/>
+            <div className="absolute inset-0 bg-gradient-to-br from-maritime-authority/95 via-maritime-authority/85 to-maritime-growth/80" />
           </div>
         ))}
 

@@ -50,14 +50,14 @@ export default function TeamSection() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`bg-maritime-surface rounded-xl overflow-hidden h-80 maritime-card-shadow maritime-hover-lift group grid grid-cols-1 lg:grid-cols-2 gap-0 ${
+              className={`bg-maritime-surface rounded-xl lg:overflow-hidden lg:h-80 maritime-card-shadow maritime-hover-lift group grid grid-cols-1 lg:grid-cols-2 gap-0 ${
                 index % 2 === 1 ? "lg:grid-flow-dense" : ""
               }`}
             >
               {/* Image */}
               <div
-                className={` overflow-hidden my-auto size-80 ${
-                  index % 2 === 1 ? "lg:col-start-2 place-self-end" : ""
+                className={` overflow-hidden my-auto size-80  place-self-center md:place-self-auto ${
+                  index % 2 === 1 ? "lg:col-start-2 lg:place-self-end " : ""
                 }`}
               >
                 <OptimizedImage

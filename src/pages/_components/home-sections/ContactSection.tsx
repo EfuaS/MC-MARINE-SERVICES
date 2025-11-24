@@ -10,6 +10,22 @@ import {
 import Button from "../Button";
 import Input from "../Input";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const officeLocations = [
+  {
+    name: "Tema Port Office",
+    address: "Tema Port, Tema, Ghana",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.134145472372!2d0.0031649747455773647!3d5.626513494354539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078a238ec05e3%3A0xddd02c3f72c0b7ad!2sTema%20Harbour%20Port!5e1!3m2!1sen!2sgh!4v1761831566495!5m2!1sen!2sgh",
+    hours: "24/7 Operations",
+  },
+  {
+    name: "Takoradi Port Office",
+    address: "Takoradi Port, Takoradi, Ghana",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7557.261835614977!2d-1.7456484097344154!3d4.884835880363726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe770a8ab2c4bf9%3A0x794b8f65b8a452ef!2sTakoradi%20Harbour!5e1!3m2!1sen!2sgh!4v1761831690843!5m2!1sen!2sgh",
+    hours: "24/7 Operations",
+  },
+];
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -23,6 +39,54 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | null>(null);
+  const [formErrors, setFormErrors] = useState<{
+    [key: string]: string;
+  } | null>(null);
+
+  function validateForm() {
+    const errors: { [key: string]: string } = {};
+
+    // validate name is not empty
+    if (!formData.name.trim()) {
+      errors.name = "Please enter your name.";
+    }
+
+    // validate email is valid
+    // Email regex requiring at least 2 characters in TLD
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
+    if (!formData.email.trim()) {
+      errors.email = "Please enter your email address.";
+    } else if (!emailRegex.test(formData.email)) {
+      errors.email = "Please enter a valid email address.";
+    }
+
+    // validate phone number with country code (minimum 10 digits)
+    const phoneRegex = /^\+?[1-9]\d{9,14}$/;
+    if (!formData.phone.trim()) {
+      errors.phone = "Please enter your phone number.";
+    } else if (!phoneRegex.test(formData.phone)) {
+      errors.phone =
+        "Please enter a valid phone number with country code (minimum 10 digits).";
+    }
+
+    // validate company is not empty
+    if (!formData.company.trim()) {
+      errors.company = "Please enter your company name.";
+    }
+
+    // validate serviceType is not empty
+    if (!formData.serviceType.trim()) {
+      errors.serviceType = "Please select a service type.";
+    }
+
+    // validate message is not empty
+    if (!formData.message.trim()) {
+      errors.message = "Please enter a message.";
+    }
+
+    return errors;
+  }
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -38,12 +102,39 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
+
+    // run form validation
+    const errors = validateForm();
+    setFormErrors(errors);
+
+    // If there are errors, don't submit
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_f87swvw", // Get from EmailJS dashboard
+        "template_7hu90b9", // Get from EmailJS dashboard
+        {
+          to_email: "efaus33@gmail.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service_type: formData.serviceType,
+          urgency: formData.urgency,
+          message: formData.message,
+        },
+        "DJ7_wemopCQI0UThy", // Get from EmailJS dashboard
+      );
+
       setIsSubmitting(false);
       setSubmitStatus("success");
+      setFormErrors(null);
       setFormData({
         name: "",
         email: "",
@@ -55,23 +146,14 @@ export default function ContactSection() {
       });
 
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      console.error("Email send failed:", error);
+      // You can add error handling UI here
+      alert("Failed to send email. Please contact us directly.");
+    }
   };
 
-  const officeLocations = [
-    {
-      name: "Tema Port Office",
-      address: "Tema Port, Tema, Ghana",
-      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.134145472372!2d0.0031649747455773647!3d5.626513494354539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078a238ec05e3%3A0xddd02c3f72c0b7ad!2sTema%20Harbour%20Port!5e1!3m2!1sen!2sgh!4v1761831566495!5m2!1sen!2sgh",
-      hours: "24/7 Operations",
-    },
-    {
-      name: "Takoradi Port Office",
-      address: "Takoradi Port, Takoradi, Ghana",
-      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7557.261835614977!2d-1.7456484097344154!3d4.884835880363726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe770a8ab2c4bf9%3A0x794b8f65b8a452ef!2sTakoradi%20Harbour!5e1!3m2!1sen!2sgh!4v1761831690843!5m2!1sen!2sgh",
-      hours: "24/7 Operations",
-    },
-  ];
   return (
     <section id="contact-section" className="py-20 bg-maritime-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,15 +201,17 @@ export default function ContactSection() {
                     value={formData?.name}
                     onChange={handleInputChange}
                     placeholder="Your full name"
+                    error={formErrors?.name}
                     required
                   />
                   <Input
                     label="Email Address"
-                    type="email"
+                    type="text"
                     name="email"
                     value={formData?.email}
                     onChange={handleInputChange}
                     placeholder="your.email@company.com"
+                    error={formErrors?.email}
                     required
                   />
                 </div>
@@ -140,6 +224,7 @@ export default function ContactSection() {
                     value={formData?.phone}
                     onChange={handleInputChange}
                     placeholder="+233-XX-XXX-XXXX"
+                    error={formErrors?.phone}
                     required
                   />
                   <Input
@@ -149,6 +234,7 @@ export default function ContactSection() {
                     value={formData?.company}
                     onChange={handleInputChange}
                     placeholder="Your company name"
+                    error={formErrors?.company}
                     required
                   />
                 </div>
@@ -162,7 +248,11 @@ export default function ContactSection() {
                       name="serviceType"
                       value={formData?.serviceType}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-maritime-growth focus:border-transparent"
+                      className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent ${
+                        formErrors?.serviceType
+                          ? "border-red-500 focus:ring-red-500"
+                          : "border-gray-300 focus:ring-maritime-growth"
+                      }`}
                       required
                     >
                       <option value="">Select service type</option>
@@ -177,6 +267,11 @@ export default function ContactSection() {
                       </option>
                       <option value="other">Other</option>
                     </select>
+                    {formErrors?.serviceType && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {formErrors.serviceType}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-maritime-authority mb-2">
@@ -203,10 +298,19 @@ export default function ContactSection() {
                     value={formData?.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-maritime-growth focus:border-transparent resize-none"
+                    className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent resize-none ${
+                      formErrors?.message
+                        ? "border-red-500 focus:ring-red-500"
+                        : "border-gray-300 focus:ring-maritime-growth"
+                    }`}
                     placeholder="Please provide details about your vessel, cargo, location, and specific requirements..."
                     required
                   />
+                  {formErrors?.message && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.message}
+                    </p>
+                  )}
                 </div>
 
                 <Button
@@ -227,11 +331,11 @@ export default function ContactSection() {
               <h3 className="text-xl font-bold mb-4">Quick Contact Options</h3>
               <div className="space-y-3">
                 <a
-                  href="mailto:info@mcmarinepro.com"
+                  href="mailto:frontdesk.mcmarineservices@gmail.com"
                   className="flex items-center hover:text-maritime-energy transition-colors duration-300"
                 >
                   <Mail size={18} color="currentColor" className="mr-3" />
-                  info@mcmarinepro.com
+                  frontdesk.mcmarineservices@gmail.com
                 </a>
                 <a
                   href="https://wa.me/+233242829813"

@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 const majorClients = [
   {
@@ -121,10 +122,13 @@ export default function TrustedByLeaders() {
                       className="group flex flex-col items-center p-6 bg-maritime-surface rounded-lg maritime-hover-lift cursor-pointer"
                     >
                       <div className="w-24 h-16 mb-4 overflow-hidden rounded-lg bg-white shadow-md">
-                        <img
+                        <OptimizedImage
                           src={client.logo}
                           alt={`${client.name} logo`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          width={96}
+                          height={64}
+                          className="w-full h-full rounded-lg"
+                          objectFit="cover"
                         />
                       </div>
                       <h3 className="text-sm font-semibold text-maritime-authority text-center mb-1">

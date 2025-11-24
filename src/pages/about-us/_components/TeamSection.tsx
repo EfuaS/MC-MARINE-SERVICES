@@ -1,4 +1,5 @@
 import { Users } from "lucide-react";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 const teamMembers = [
   {
@@ -59,11 +60,13 @@ export default function TeamSection() {
                   index % 2 === 1 ? "lg:col-start-2 place-self-end" : ""
                 }`}
               >
-                <img
+                <OptimizedImage
                   src={member.image}
                   alt={member.name}
                   width={320}
+                  height={320}
                   className="rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  objectFit="cover"
                 />
               </div>
 

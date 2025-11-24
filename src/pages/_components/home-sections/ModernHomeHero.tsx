@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Award, ArrowRight } from "lucide-react";
 import { Link } from "../../../router";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 export default function ModernHomeHero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -46,13 +47,15 @@ export default function ModernHomeHero() {
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
+            <OptimizedImage
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              priority={index === 0}
+              className="w-full h-full"
+              objectFit="cover"
             />
             {/* Modern gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-maritime-authority/95 via-maritime-authority/85 to-maritime-growth/80"/>
+            <div className="absolute inset-0 bg-gradient-to-br from-maritime-authority/95 via-maritime-authority/85 to-maritime-growth/80" />
           </div>
         ))}
 

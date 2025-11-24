@@ -1,5 +1,6 @@
 import { Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { OptimizedImage } from "../../../components/OptimizedImage";
 
 export default function CommitmentSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -60,10 +61,12 @@ export default function CommitmentSection() {
                     index === currentImageIndex ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <img
+                  <OptimizedImage
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover"
+                    priority={index === 0} // Only first image loads immediately
+                    className="w-full h-full"
+                    objectFit="cover"
                   />
                 </div>
               ))}
